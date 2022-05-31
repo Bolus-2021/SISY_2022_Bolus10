@@ -15,10 +15,21 @@ jobs:
         with:
           name: Final document
           path: hajnal-sisy2022-bolus.pdf
-      - run: mkdir -p ~/.ssh
-      - run: ssh-keyscan -T 60 -H ${{ secrets.SSH_HOST_BOLUS }} >> ~/.ssh/known_hosts
-      - uses: shimataro/ssh-key-action@v2
+
+      - name: Upload to gdrive
+        uses: adityak74/google-drive-upload-git-action@main
         with:
-          key: ${{ secrets.SSH_PRIVATE_KEY_BOLUS }} 
-          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+          credentials: ${{ secrets.GOOGLE_CREDENTIALS }}
+          filename: "hajnal-sisy2022-bolus.pdf"
+          folderId: ${{ secrets.FOLDERID }}
+          name: "hajnal-sisy2022-bolus.pdf" # optional string
+          overwrite: "true" # optional boolean
+
+
+#      - run: mkdir -p ~/.ssh
+#      - run: ssh-keyscan -T 60 -H ${{ secrets.SSH_HOST_BOLUS }} >> ~/.ssh/known_hosts
+#      - uses: shimataro/ssh-key-action@v2
+#        with:
+#          key: ${{ secrets.SSH_PRIVATE_KEY_BOLUS }} 
+#          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
 
