@@ -16,22 +16,14 @@ jobs:
           name: Final document
           path: hajnal-sisy2022-bolus.pdf
 
-
-      - name: Upload README.md to Google Drive
-        uses: Jodebu/upload-to-drive@master
+      - name: Upload to gdrive
+        uses: adityak74/google-drive-upload-git-action@main
         with:
-          target: hajnal-sisy2022-bolus.pdf
-          credentials: secrets.${{ secrets.GOOGLE_CREDENTIALS }}
-          folder: ${{ secrets.FOLDERID }}
-
-#      - name: Upload to gdrive
-#        uses: adityak74/google-drive-upload-git-action@main
-#        with:
-#          credentials: ${{ secrets.GOOGLE_CREDENTIALS }}
-#          filename: "hajnal-sisy2022-bolus.pdf"
-#          folderId: ${{ secrets.FOLDERID }}
-#          name: "hajnal-sisy2022-bolus.pdf" # optional string
-#          overwrite: "true" # optional boolean
+          credentials: ${{ secrets.GOOGLE_CREDENTIALS }}
+          filename: "hajnal-sisy2022-bolus.pdf"
+          folderId: ${{ secrets.FOLDERID }}
+          name: "hajnal-sisy2022-bolus.pdf" # optional string
+          overwrite: "true" # optional boolean
 
 
 #      - run: mkdir -p ~/.ssh
