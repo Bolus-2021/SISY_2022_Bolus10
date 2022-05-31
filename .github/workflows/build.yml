@@ -15,8 +15,8 @@ jobs:
         with:
           name: Final document
           path: hajnal-sisy2022-bolus.pdf
-      - run: ssh-keyscan -H ${{ secrets.SSH_HOST_BOLUS }} >> ~/.ssh/known_hosts
       - run: mkdir -p ~/.ssh
+      - run: ssh-keyscan -H ${{ secrets.SSH_HOST_BOLUS }} >> ~/.ssh/known_hosts
       - uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY_BOLUS }} 
