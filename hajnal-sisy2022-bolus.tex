@@ -151,6 +151,33 @@ was used.
 
 \subsection{Gateways}
 
+The gateways (see Fig. \ref{bolus-gw-photo}) are responsible for receiving
+the signals from the bolus and
+storing the collected data. The gateway is based on a Raspberry Pi 2 model B.
+This single board computer has an ARM processor running at 700 MHz, 512 MB of
+RAM and an SD card for the operating system and data storage. Since the
+Raspberry Pi does not have a battery backed realtime clock the date and
+time has to be set on startup to ensure correct timestamps to the
+measurements.
+
+The RF packets are received by a similar radio transceiver to the one inside the
+bolus. The radio and the SBC are connected through a serial-to-USB converter.
+
+The gateway sends an acknowledgment to every received packet. If the bolus
+does not receive the ACK it tries to transmit the packet at most twice more.
+This mechanism procects against short interferences. Although the bolus does
+not store unsuccessfully delivered packets, therefore those measurements are
+lost.
+
+\subsection{Data format}
+
+The received data is logged in CSV (Comma Separated Values) format. This gives
+flexibility to analyze collected data in a vide variety of programming languages
+(for example Python, R, or C) or in Excel. The data collection software records
+each received packet in a row. A single packet contains one second of data,
+which means TODO accelerometer samples, one temperature value and the count
+of shock events.
+
 \subsection{Injecting the bolus}
 
 \begin{figure}[htbp]
@@ -158,9 +185,6 @@ was used.
   \caption{Injecting the bolus with the applicator.}
 \label{bolus-gw-photo}
 \end{figure}
-
-
-\subsection{Data format}
 
 
 \section{Results}
