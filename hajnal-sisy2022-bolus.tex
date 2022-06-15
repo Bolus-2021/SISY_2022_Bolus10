@@ -183,9 +183,35 @@ lost.
 The received data is logged in CSV (Comma Separated Values) format. This gives
 flexibility to analyze collected data in a vide variety of programming languages
 (for example Python, R, or C) or in Excel. The data collection software records
-each received packet in a row. A single packet contains one second of data,
-which means TODO accelerometer samples, one temperature value and the count
+each received packet in a row. A single packet contains one second of data.
+An example line from the data record is shown in Fig. \ref{csv-sample}. The first
+value is a standard Unix timestamp represented as a floating point number to provide
+higher resolution. The next field is the serial number of the packet. This helps to
+detect missing packets. Then 25 triplets of integers follow, which belong to the
+25 measurements taken by the acceletometer with the 3 axes. It is followed by
+a counter value from the shock sensor. The last number is the RSSI (Received
+Signal Strength Indicator), in dBm.
 of shock events.
+
+\begin{figure}[htbp]
+\begin{verbatim}
+1651672339.971273,95810,-15344,-3024,3132,
+-15656,-3120,3336,-15652,-3108,3840,-15308,
+-3404,4076,-15336,-3432,3924,-15148,-3796,
+3900,-15020,-3772,3896,-15032,-3756,4008,
+-15212,-3632,3888,-15396,-3704,3572,-15568,
+-3528,3712,-15716,-3340,3904,-15492,-3288,
+3868,-15364,-3212,3736,-15432,-3184,3528,
+-15564,-3204,3392,-15816,-3472,3424,-15984,
+-3400,3736,-15976,-3052,3980,-15812,-2976,
+4064,-15800,-3112,4140,-15652,-2960,4112,
+-15636,-3124,4076,-15484,-3136,3968,-15360,
+-3128,3904,42.75,0,-80.5
+\end{verbatim}
+  \caption{A sample line from the recorded data}
+\label{csv-sample}
+\end{figure}
+
 
 \subsection{Injecting the bolus}
 
