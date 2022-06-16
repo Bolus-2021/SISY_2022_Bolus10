@@ -9,7 +9,7 @@
 \usepackage{xcolor}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
 \title{Experimental Bolus Sensor for Dairy Cattle\\
@@ -38,17 +38,17 @@ udvardy.peter@amk.uni-obuda.hu}
 \maketitle
 
 \begin{abstract}
-A great challenge of today's humanity is to serve the intensively
-increasing demand for food, in an environmentally friendly manner.
-A promising way to address this problem is precision agriculture,
-based on extensive monitoring. In our research we focus on dairy
-cattle and rumen bolus sensors. This paper presents the preliminary
-results of an experimental bolus, equipped with accelerometer,
-shock sensor and temperature meter. During the measurement a bolus sensor was settled into the rumen of the examined cattle and a video recording was saved at the same time. The recorded data set was examined from movement activity, heart rate, body temperature baseline aspects.
+  A great challenge of today's humanity is to serve the intensively
+  increasing demand for food, in an environmentally friendly manner.
+  A promising way to address this problem is precision agriculture,
+  based on extensive monitoring. In our research we focus on dairy
+  cattle and rumen bolus sensors. This paper presents the preliminary
+  results of an experimental bolus, equipped with accelerometer,
+  shock sensor and temperature meter. During the measurement a bolus sensor was settled into the rumen of the examined cattle and a video recording was saved at the same time. The recorded data set was examined from movement activity, heart rate, body temperature baseline aspects.
 \end{abstract}
 
 \begin{IEEEkeywords}
-dairy cattle, bolus, accelerometer, jerk
+  dairy cattle, bolus, accelerometer, jerk
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -107,9 +107,9 @@ to be asymmetrical, the battery being one one end and a low density
 material on the other side. The electronics are placed in between these two.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.48\textwidth]{fig/bolus-physical-layout.png}}
-\caption{The physical layout of the bolus.}
-\label{bolus-physical-layout}
+  \centerline{\includegraphics[width=0.48\textwidth]{fig/bolus-physical-layout.png}}
+  \caption{The physical layout of the bolus.}
+  \label{bolus-physical-layout}
 \end{figure}
 
 The physical layout of the bolus is shown in Fig. \ref{bolus-physical-layout}.
@@ -141,21 +141,9 @@ inside the bolus, therefore a much smaller, approx. 6 cm wire antenna
 was used.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.48\textwidth]{fig/bolus_gw_photo.jpg}}
+  \centerline{\includegraphics[width=0.48\textwidth]{fig/bolus_gw_photo.jpg}}
   \caption{The bolus (right side) and the gateway (left side).}
-\label{bolus-gw-photo}
-\end{figure}
-
-\begin{figure}[htbp]
-\centerline{
-  \includegraphics[width=0.15\textwidth]{fig/kfj_1.png}
-  \includegraphics[width=0.15\textwidth]{fig/kfj_2.png}
-  \includegraphics[width=0.15\textwidth]{fig/kfj_3.png}
-  }
-  \caption{Experiment of the self-orientation of the bolus sensor. The
-  bolus is placed in a horizontal position in water (left side), then takes
-  an upright position (middle, then right side).}
-\label{bolus-gw-photo}
+  \label{bolus-gw-photo}
 \end{figure}
 
 \subsection{Gateways}
@@ -208,7 +196,7 @@ of shock events.
 -15636,-3124,4076,-15484,-3136,3968,-15360,
 -3128,3904,42.75,0,-80.5
 \end{verbatim}
-  \caption{A sample line from the recorded data}
+\caption{A sample line from the recorded data}
 \label{csv-sample}
 \end{figure}
 
@@ -216,9 +204,9 @@ of shock events.
 \subsection{Injecting the bolus}
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.48\textwidth]{fig/bolus_application.jpg}}
+  \centerline{\includegraphics[width=0.48\textwidth]{fig/bolus_application.jpg}}
   \caption{Injecting the bolus with the applicator.}
-\label{bolus-gw-photo}
+  \label{bolus-gw-photo}
 \end{figure}
 
 
@@ -226,7 +214,25 @@ of shock events.
 
 \subsection{Validating of self-orienatation}
 
-To validate the self-orientation behavior of the bolus, a time interval was
+First the self-orienting behavior of the bolus sensor was tested outside the
+rumen in water. The bolus was placed horizontally in the middle of the bucket,
+then it was released. The bolus reached a vertical orientation in about 2 seconds,
+as can be seen in Fig. \ref{self-orientation-experiment}.
+
+\begin{figure}[htbp]
+  \centerline{
+    \includegraphics[width=0.15\textwidth]{fig/kfj_1.png}
+    \includegraphics[width=0.15\textwidth]{fig/kfj_2.png}
+    \includegraphics[width=0.15\textwidth]{fig/kfj_3.png}
+  }
+  \caption{Experiment of the self-orientation of the bolus sensor. The
+  bolus is placed in a horizontal position in water (left side), then takes
+  an upright position (middle, then right side).}
+  \label{self-orientation-experiment}
+\end{figure}
+
+To validate the self-orientation behavior of the bolus inside the rumen,
+a time interval was
 selected, when the animal significantly changed their position (lays down,
 in our case). As the \emph{z} axis is parallel with the longitudinal axis
 of the bolus, we expect near 1 G of acceleration in this direction, when
@@ -234,22 +240,51 @@ the animal either standing or lying. We also expect a transient phase in
 between these two.
 
 To validate this phenomenon the samples collected along the \emph{z} axis
-were processed. 
+were processed. First a $2^{nd}$ order Butterworth lowpass filter was
+applied to the data with corner frequency of 5 mHz. This very low
+frequency suppresses most of the higher frequency noises and provides
+a smooth output. From the filtered acceleration data the vertical
+angle of the bolus was calculated with an inverse sinus function.
+The resulting graph can be seen in Fig. \ref{auto-orientation}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.48\textwidth]{fig/auto-orientation.png}}
+  \caption{Changing of the orientation of the bolus}
+\label{auto-orientation}
+\end{figure}
+
+In the first 3 minutes the graph shows a near vertical state (about
+75\textdegree). Then the animal probably made a significant movement,
+when the bolus reached a near horizontal position (about 10\textdegree)
+in 8 minutes and got back to a near vertical orientation (about 80
+\textdegree) again in 8 minutes. Int the remaining time the bolus
+has a more or less stable orientation between 50\textdegree and
+80\textdegree.
+
+According to this experiment the bolus tends to get a vertical, or a near
+vertical orientation, but this procedure is several orders of magnitude
+slower inside the rumen than in water.
 
 \subsection{Heart rate and respiration analysis}
+
+Weak signals caused by the heartbeats and the respiration can only analyzed
+in calm periods. Based on the video recording and the standard deviation
+of the acceleration data a calm period was selected with length of 36 sec.
+Fig. \ref{bolus-gw-photo} shows the selected signal in time domain.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.48\textwidth]{fig/heart-time-domain.jpg}}
   \caption{Sample data from the accelerometer during a calm period, visualized
   in time domain.}
-\label{bolus-gw-photo}
+\label{heart-time-domain}
 \end{figure}
+
 
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.48\textwidth]{fig/heart-wavelet.jpg}}
   \caption{Sample data visualized after wavelet transformation.}
-\label{bolus-gw-photo}
+\label{heart-wavelet}
 \end{figure}
 
 
