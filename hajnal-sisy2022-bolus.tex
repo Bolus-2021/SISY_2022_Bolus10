@@ -270,6 +270,8 @@ According to this experiment the bolus tends to get a vertical, or a near
 vertical orientation, but this procedure is several orders of magnitude
 slower inside the rumen than in water.
 \subsection{Activity analysis}
+The general movement activity is an important feature of cattle and its monitoring  is essential. However the activity measurements can be a subject of another paper, in this article only the stepping activity  is presented. Monitoring the quantity of walking gives information about the general health of the animal and both the quantity and the detailed feature can be special indicators of the lameness. The stepping activity is shown on Fig.\ref{walking}. This chart shows the special doulbe peaked curve of the walking with the appropriate ampltude and 1-2s period length. The preprocessing of data was the calculation of the resultant acceleration, followed by filtering with lowpass Butterworth filter at 2.5Hz, and the calculation of the jerk of this processed resultant and finished with lowpass Butterworth filtering at 2.5 Hz and visualization.
+
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.48\textwidth]{fig/plot_ker.png}}
   \caption{Sample data from the accelerometer preprocessed for detecting movement activity, visualized
@@ -280,7 +282,7 @@ slower inside the rumen than in water.
 
 \subsection{Rumination}
 
-Rumination is a very important activity of cattles of which monitoring is essential. Rumination is a periodic movements of the rumen with large amplitude (near 0.01-0.02G) and larger period length. The typical period is between 40 and 80 second. For detecting rumination, according to the literature a preprocessing calculation was executed, namely the jerk of each axis and the resultant of the jerks were calculated followed with the rolling variance in 1.5s long window and finally a rolling average with 8s long window. The resulted time series must show periodic accelerations with the mentioned attributes. Fig.\ref{rumination} show a mixed signal with periodic sign of rumination in the first 5 seconds and after that a nonperiodic activity.
+Rumination is a very important activity of cattles of which monitoring is essential. Rumination is a periodic movements of the rumen with large amplitude (near 0.01-0.02G) and larger period length. The typical period is between 40 and 80 second. For detecting rumination, according to the literature a preprocessing calculation was executed, namely the jerk of each axis and the resultant of the jerks were calculated followed with the rolling variance in 1.5s long window and finally a rolling average with 8s long window. The resulted time series must show periodic accelerations with the mentioned attributes. Fig.\ref{rumination} shows a mixed signal with periodic sign of rumination in the first 5 minutes and after that a nonperiodic activity.
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.48\textwidth]{fig/rumination.png}}
   \caption{Sample data from the accelerometer preprocessed for detecting rumination, visualized
