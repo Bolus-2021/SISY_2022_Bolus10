@@ -270,9 +270,23 @@ According to this experiment the bolus tends to get a vertical, or a near
 vertical orientation, but this procedure is several orders of magnitude
 slower inside the rumen than in water.
 \subsection{Activity analysis}
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.48\textwidth]{fig/plot_ker.png}}
+  \caption{Sample data from the accelerometer preprocessed for detecting movement activity, visualized
+  in time domain.}
+\label{walking}
+\end{figure}
+
 
 \subsection{Rumination}
 
+Rumination is a very important activity of cattles of which monitoring is essential. Rumination is a periodic movements of the rumen with large amplitude (near 0.01-0.02G) and larger period length. The typical period is between 40 and 80 second. For detecting rumination, according to the literature a preprocessing calculation was executed, namely the jerk of each axis and the resultant of the jerks were calculated followed with the rolling variance in 1.5s long window and finally a rolling average with 8s long window. The resulted time series must show periodic accelerations with the mentioned attributes. Fig.\ref{rumination} show a mixed signal with periodic sign of rumination in the first 5 seconds and after that a nonperiodic activity.
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.48\textwidth]{fig/rumination.png}}
+  \caption{Sample data from the accelerometer preprocessed for detecting rumination, visualized
+  in time domain.}
+\label{rumination}
+\end{figure}
 
 \subsection{Heart rate and respiration analysis}
 
@@ -303,10 +317,7 @@ The results were plotted for visual analysis. The heart rate first and second ha
 
 \section*{Acknowledgment}
 
-The preferred spelling of the word ``acknowledgment'' in America is without 
-an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B. 
-G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
-acknowledgments in the unnumbered footnote on the first page.
+“This research was funded by NKFI Hungary, grant number 2020-1.1.2-PIACI-KFI-2020-00109”. We would like to thank to Levente Kovács MATE Hungary for his advices.
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,references}
