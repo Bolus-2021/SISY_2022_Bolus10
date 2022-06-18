@@ -269,16 +269,21 @@ has a more or less stable orientation between 50\textdegree and
 According to this experiment the bolus tends to get a vertical, or a near
 vertical orientation, but this procedure is several orders of magnitude
 slower inside the rumen than in water.
+\subsection{Activity analysis}
+
+\subsection{Rumination}
+
 
 \subsection{Heart rate and respiration analysis}
 
 Weak signals caused by the heartbeats and the respiration can only analyzed
 in calm periods. Based on the video recording and the standard deviation
-of the acceleration data a calm period was selected with length of 36 sec.
+of the acceleration data a calm periods were selected with length of 36 sec.
+Data were preprocessed for analysis, namely the outliers were replaced with mean value and a moving average was calculated with 8 data width window. The resulted time series is shown in fig...
 Fig. \ref{bolus-gw-photo} shows the selected signal in time domain.
-
+Heart rate analysis was taken with Wavelet-Morlet analysis with 8s long data periods. The results were plotted for visual analysis. The heart rate first and second harmonic were visible on 90% of randomly chosen data samples and heart rate safely identified on 70% of the samples. The heart rate is visible between 0.5 and 1 s period length. The signals of respiration are visible between 2s and 4s periods. It is important to note that the amplitude of the heart signal is near 0.003G but the amplitude of the respiration is weaker, because the movements of the respiration are more calm and "smooth". According to this the respiration is visible only in 50-60% of the randomly choosen data samples.
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.48\textwidth]{fig/heart-time-domain.jpg}}
+\centerline{\includegraphics[width=0.48\textwidth]{fig/ts_heart.png}}
   \caption{Sample data from the accelerometer during a calm period, visualized
   in time domain.}
 \label{heart-time-domain}
@@ -287,12 +292,12 @@ Fig. \ref{bolus-gw-photo} shows the selected signal in time domain.
 
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.48\textwidth]{fig/heart-wavelet.jpg}}
+\centerline{\includegraphics[width=0.48\textwidth]{fig/Wavelet.png}}
   \caption{Sample data visualized after wavelet transformation.}
 \label{heart-wavelet}
 \end{figure}
 
-
+\subsection{Analysis of temperature meter data}
 
 \section{Summary}
 
