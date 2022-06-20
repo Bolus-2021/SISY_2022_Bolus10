@@ -143,17 +143,18 @@ material on the other side. The electronics are placed in between these two.
 The physical layout of the bolus is shown in Fig. \ref{bolus-physical-layout}.
 The power source of the unit is a non-rechargeable D type Lithium battery,
 which provides 3.7 V and 18 Ah capacity and most of the mass. The
-microcontroller on the circuit board is a TODO, which controls the
+microcontroller on the circuit board is a ST STM32L496RET6 with maximum
+clock frequency of 80 MHz, which controls the
 sensors and the radio.
 
-The accelerometer is a TODO, which has 16 bit resolution on 3 axes and
+The accelerometer is a ST LSM6DSO, which has 16 bit resolution on 3 axes and
 set to 25 Hz sample rate. This gives a good balance between the available
 bandwidth and the data processing possibilities. This modality is extended
 with an additional shock detector. This sensor acts as a simple contact switch,
 which activates when an abrupt motion event happens. The microcontroller
 counts the number of detections in every second.
 
-The third sensor is a digital temperature meter (TODO type), which gives
+The third sensor is a digital temperature meter (Sensirion STS35 type), which gives
 a precision of 0.1 \textcelsius.
 
 Since the body of the cattle gives significant attenuation of RF signals
@@ -162,8 +163,8 @@ carefully. The body of the animals tends to give more attenuation on higher
 frequencies (especially 2.4 GHz seems to be a bad decesion), but on the
 other hand lower frequencies require larger antennas to the same gain.
 Another compromise is present between the data bandwidth and the link budget.
-In this design the TODO digital radio was chosen. It operates in the 169 MHz
-band and has a raw bandwith of TODO kbps. In this frequency a
+In this design the Würth AMB3626-M digital radio was chosen. It operates in the 169 MHz
+band and has a raw bandwith of 8 kbps. In this frequency a
 $\lambda / 4 \approx 42 cm$ would be ideal, which clearly cannot be fit
 inside the bolus, therefore a much smaller, approx. 6 cm wire antenna
 was used.
