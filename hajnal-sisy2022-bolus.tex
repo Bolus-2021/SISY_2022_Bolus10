@@ -243,10 +243,28 @@ of shock events.
 
 \subsection{Analyzing the radio communication}
 
-Radio communication is one of the most important function of the bolus. It heavily
-impacts the quality of the measurements 
+Radio communication is one of the most important function of the bolus. It
+heavily impacts the quality of the measurements, because the malfunction of the
+radio ruins the whole measurement. To characterize the data link the RSSI of
+the received packets was plot during a one hour period. The histogram is shown
+in Fig. \ref{rssi-hist}. Most of the packets have an RSSI between -81 dBm and
+-72 dBm. The gateway received a few packets with RSSI down to -82 dBm, but it
+seems to be the noise threshold. Some packets (less than 5\%) had an RSSI value
+between -72 dBm and -68 dBm, which were probably received, when the cattle was
+in the close proximity of the of the gateway.
 
-\subsection{Validating of self-orienatation}
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=0.48\textwidth]{fig/rssi_hist.png}}
+  \caption{Histogram of the RSSI values}
+  \label{rssi-hist}
+\end{figure}
+
+Since the gateway tracks the lost packets (i.e. the time slots, when a packet
+is expected, but none is received) as well The theoretical number of packets is
+3600 during the examined 1 hour period. The gateway received 3256 packets
+(90.4\%), the packet loss was 9.6\%.
+
+\subsection{Validating of self-orientation}
 
 First the self-orienting behavior of the bolus sensor was tested outside the
 rumen in water. The bolus was placed horizontally in the middle of the bucket,
