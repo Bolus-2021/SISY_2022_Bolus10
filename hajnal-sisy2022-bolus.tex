@@ -316,7 +316,19 @@ vertical orientation, but this procedure is several orders of magnitude slower
 inside the rumen than in water.
 
 \subsection{Activity analysis}
-The general movement activity is an important feature of cattle and its monitoring  is essential. However the activity measurements can be a subject of another paper, in this article only the stepping activity  is presented. Monitoring the quantity of walking gives information about the general health of the animal and both the quantity and the detailed feature can be special indicators of the lameness. The stepping activity is shown on Fig.\ref{walking}. This chart shows the special doulbe peaked curve of the walking with the appropriate ampltude and 1-2s period length. The preprocessing of data was the calculation of the resultant acceleration, followed by filtering with lowpass Butterworth filter at 2.5Hz, and the calculation of the jerk of this processed resultant and finished with lowpass Butterworth filtering at 2.5 Hz and visualization.
+
+The general movement activity is an important feature of cattle and its
+monitoring  is essential. However the activity measurements can be a subject of
+another paper, in this article only the stepping activity  is presented.
+Monitoring the quantity of walking gives information about the general health
+of the animal and both the quantity and the detailed feature can be special
+indicators of the lameness. The stepping activity is shown on
+Fig.\ref{walking}. This chart shows the special doulbe peaked curve of the
+walking with the appropriate ampltude and 1-2s period length. The preprocessing
+of data was the calculation of the resultant acceleration, followed by
+filtering with lowpass Butterworth filter at 2.5Hz, and the calculation of the
+jerk of this processed resultant and finished with lowpass Butterworth
+filtering at 2.5 Hz and visualization.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.48\textwidth]{fig/plot_ker.png}}
@@ -325,23 +337,35 @@ The general movement activity is an important feature of cattle and its monitori
 \label{walking}
 \end{figure}
 
-
 \subsection{Rumination}
 
-Rumination is a very important activity of cattles of which monitoring is essential. Rumination is a periodic movements of the rumen with large amplitude (near 0.01-0.02G) and larger period length. The typical period is between 40 and 80 second. For detecting rumination, according to the literature a preprocessing calculation was executed, namely the jerk of each axis and the resultant of the jerks were calculated followed with the rolling variance in 1.5s long window and finally a rolling average with 8s long window. The resulted time series must show periodic accelerations with the mentioned attributes. Fig.\ref{rumination} shows a mixed signal with periodic sign of rumination in the first 5 minutes and after that a nonperiodic activity.
+Rumination is a very important activity of cattles of which monitoring is
+essential. Rumination is a periodic movements of the rumen with large amplitude
+(near 0.01-0.02G) and larger period length. The typical period is between 40
+and 80 second. For detecting rumination, according to the literature a
+preprocessing calculation was executed, namely the jerk of each axis and the
+resultant of the jerks were calculated followed with the rolling variance in
+1.5s long window and finally a rolling average with 8s long window. The
+resulted time series must show periodic accelerations with the mentioned
+attributes. Fig.\ref{rumination} shows a mixed signal with periodic sign of
+rumination in the first 5 minutes and after that a nonperiodic activity.
+
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.48\textwidth]{fig/rumination.png}}
-  \caption{Sample data from the accelerometer preprocessed for detecting rumination, visualized
-  in time domain.}
+  \caption{Sample data from the accelerometer preprocessed for detecting
+  rumination, visualized in time domain.}
 \label{rumination}
 \end{figure}
 
 \subsection{Heart rate and respiration analysis}
 
-Weak signals caused by the heartbeats and the respiration can only analyzed
-in calm periods. Based on the video recording and the standard deviation
-of the acceleration data a calm periods were selected with length of 36 sec.
-Data were preprocessed for analysis, namely the outliers were replaced with mean value and a moving average was calculated with 8 data width window. The resulted time series is in Fig.\ref{heart-time-domain}  shows the selected signal in time domain.
+Weak signals caused by the heartbeats and the respiration can only analyzed in
+calm periods. Based on the video recording and the standard deviation of the
+acceleration data a calm periods were selected with length of 36 sec. Data were
+preprocessed for analysis, namely the outliers were replaced with mean value
+and a moving average was calculated with 8 data width window. The resulted time
+series is in Fig.\ref{heart-time-domain}  shows the selected signal in time
+domain.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.48\textwidth]{fig/ts_heart.png}}
@@ -350,8 +374,20 @@ Data were preprocessed for analysis, namely the outliers were replaced with mean
 \label{heart-time-domain}
 \end{figure}
 
-Heart rate analysis was taken with Wavelet-Morlet analysis with 8s long data periods. 
-The results were plotted for visual analysis. The heart rate first and second harmonic were visible on 90 percentage of randomly chosen data samples and heart rate safely identified on 70 percentage of the samples. The heart rate is visible between 0.5 and 1 s period length (Fig.\ref{heart-wavelet}). The signals of respiration are visible between 2s and 4s period length. It is important to note that the amplitude of the heart signal is near 0.003G but the amplitude of the respiration is weaker, because the movements of the respiration are more calm and "smooth". Furthermore the background physical phenomenon is different in accelerometer measurements to the traditional ECG measurements. This later measurement based on detecting electric signals of the heart but this former measurement based on detecting the acceleration data generated by heart muscles movements.   According to this the respiration is visible only in 50-60 percentage of the randomly choosen data samples.
+Heart rate analysis was taken with Wavelet-Morlet analysis with 8s long data
+periods. The results were plotted for visual analysis. The heart rate first and
+second harmonic were visible on 90 percentage of randomly chosen data samples
+and heart rate safely identified on 70 percentage of the samples. The heart
+rate is visible between 0.5 and 1 s period length (Fig.\ref{heart-wavelet}).
+The signals of respiration are visible between 2s and 4s period length. It is
+important to note that the amplitude of the heart signal is near 0.003G but the
+amplitude of the respiration is weaker, because the movements of the
+respiration are more calm and "smooth". Furthermore the background physical
+phenomenon is different in accelerometer measurements to the traditional ECG
+measurements. This later measurement based on detecting electric signals of the
+heart but this former measurement based on detecting the acceleration data
+generated by heart muscles movements.   According to this the respiration is
+visible only in 50-60 percentage of the randomly choosen data samples.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.48\textwidth]{fig/Wavelet.png}}
@@ -365,7 +401,9 @@ The results were plotted for visual analysis. The heart rate first and second ha
 
 \section*{Acknowledgment}
 
-“This research was funded by NKFI Hungary, grant number 2020-1.1.2-PIACI-KFI-2020-00109”. We would like to thank to Levente Kovács MATE Hungary for his advices.
+''This research was funded by NKFI Hungary, grant number
+2020-1.1.2-PIACI-KFI-2020-00109''. We would like to thank to Levente Kovács
+MATE Hungary for his advices.
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,references}
