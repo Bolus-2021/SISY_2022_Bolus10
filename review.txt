@@ -1,0 +1,38 @@
+Result of review:  accepted
+
+Please, correct / modify your paper according to reviewers’ notes.
+
+Reviewer’s comments:
+
+Review 1:
+
+The goal of the paper is clearly presented, however there are grammatical errors and typos in the article.
+- ciation "?"
+-typo "Int the", "doulbe", "ampltude"
+
+- Showcasing numerical data from a CSV file is not informative and necessary.
+- The paper generally only presents results, but lacks the interpretations and discussions of the results.
+- The rationale using jerk instead of acceleration is missing.
+
+Review 2:
+Please check the references. Please check for grammatical errors to make it easier to read.
+The detailed description of the Measurement environment seems excessive, it does not aid to understand the workings of the sensor. A comparison with existing sensors would be helpful, regarding features and results.
+
+Review 3:
+Language remarks
+Spell check: the battery being one one end [on one end?]; decesion; bandwith; procects; acceletometer; doulbe; ampltude; cattles – cattle is a non-count noun, thus it does not take an ‘s’ for plural; choosen; with an triaxial accelerometer [a]; raspiration; advices – advice is a non-count noun, thus it does not take an ‘s’ for plural
+Use of personal pronouns: the use of ‘our’ is unacceptable in scientific English, suggest using Passive Voice instead: we focus on dairy cattle; in our case;
+Grammar
+Definite article: OK
+Singular – plural accord: The forage for the animal husbandry are [is] produced locally; is one of the most important function[s]; is a periodic movements [the]; a calm periods; These type[s] of complex sensors;
+
+Language use:
+Un-English constructions and grammar mistakes: on Fig.8 [in figure];
+
+(Unacceptable) abbreviations: OK
+
+Composition: coherent
+Formatting: OK,
+Unacceptable vocabulary or style: to get a vertical;
+Recommendation: This version of the paper needs considerable work on its language. The authors failed to spell check the paper for basic spelling mistakes and basic grammer errors in the use of singular-plural. Based on the language check, I recommend acceptance only after spell check, thorough language revision by a professional, rewriting without personal pronouns and correction of grammar and language use mistakes.
+
