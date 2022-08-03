@@ -104,7 +104,7 @@ presents future directions for development.
 
 \section{Measurement environment}
 
-The experiment was carried out on a large-scale dairy farm at ‘Agárdi Farm Ltd’ in the Central-Transdanubian region of Hungary. The farm was formed on the base of the former ‘Agárdi state farm’ after the political changes in the early 90’s and has 5850 hectares of arable land. The farm deals with plant production, animal husbandry and game management. More than 300 hectares of the arable land is irrigated. The forage for the animal husbandry are produced locally.
+The experiment was carried out on a large-scale dairy farm at ‘Agárdi Farm Ltd’ in the Central-Transdanubian region of Hungary. The farm was formed on the base of the former ‘Agárdi state farm’ after the political changes in the early 90’s and has 5850 hectares of arable land. The farm deals with plant production, animal husbandry and game management. More than 300 hectares of the arable land is irrigated. The forage for the animal husbandry is produced locally.
 The farm has a herd of over 900 lactating Holstein cows. From the 28th day before calving, dry cows are housed in a pre-calving group pen (measuring 35 m × 20 m), which include 50 to 60 animals and is bedded with deep straw. Before calving, cows are fed a prepartum total mixed ration (TMR) ad libitum containing a dietary forage to concentrate ratio of 81.7:18.3 on a dry mater (DM) basis. The chemical composition of the bovine milk is highly depending on the forage quality and feeding method \cite{aidin2019}.
 
 Calvings take place in the prepartum group pen or, if continuous supervision or obstetrical assistance is required at calving, in a separate maternity pen. Within 1 hour after calving the dam is being milked, and 3.8 litres fresh colostrum is provided to the new-born calves by nipple bottle. If the colostrum of the dam is low quality or insufficient, calves receive frozen colostrum.
@@ -132,7 +132,7 @@ the required strength and sealing.
 A more or less fixed orientation of the bolus would ease the signal
 processing of the accelerometer. To provide some defined orientation
 in at least one axis the weight distribution of the bolus is designed
-to be asymmetrical, the battery being one one end and a low density
+to be asymmetrical, the battery being on one end and a low density
 material on the other side. The electronics are placed in between these two.
 
 \begin{figure}[htbp]
@@ -161,11 +161,11 @@ a precision of 0.1 \textcelsius.
 Since the body of the cattle gives significant attenuation of RF signals
 the radio chip, the communication frequency and modulation was chosen very
 carefully. The body of the animals tends to give more attenuation on higher
-frequencies (especially 2.4 GHz seems to be a bad decesion), but on the
+frequencies (especially 2.4 GHz seems to be a bad decision), but on the
 other hand lower frequencies require larger antennas to the same gain.
 Another compromise is present between the data bandwidth and the link budget.
 In this design the Würth AMB3626-M digital radio was chosen. It operates in the 169 MHz
-band and has a raw bandwith of 8 kbps. In this frequency a
+band and has a raw bandwidth of 8 kbps. In this frequency a
 $\lambda / 4 \approx 42 cm$ would be ideal, which clearly cannot be fit
 inside the bolus, therefore a much smaller, approx. 6 cm wire antenna
 was used.
@@ -192,7 +192,7 @@ bolus. The radio and the SBC are connected through a serial-to-USB converter.
 
 The gateway sends an acknowledgment to every received packet. If the bolus
 does not receive the ACK it tries to transmit the packet at most twice more.
-This mechanism procects against short interferences. Although the bolus does
+This mechanism protects against short interferences. Although the bolus does
 not store unsuccessfully delivered packets, therefore those measurements are
 lost.
 
@@ -206,7 +206,7 @@ An example line from the data record is shown in Fig. \ref{csv-sample}. The firs
 value is a standard Unix timestamp represented as a floating point number to provide
 higher resolution. The next field is the serial number of the packet. This helps to
 detect missing packets. Then 25 triplets of integers follow, which belong to the
-25 measurements taken by the acceletometer with the 3 axes. It is followed by
+25 measurements taken by the accelerometer with the 3 axes. It is followed by
 a counter value from the shock sensor. The last number is the RSSI (Received
 Signal Strength Indicator), in dBm.
 of shock events.
@@ -244,7 +244,7 @@ of shock events.
 
 \subsection{Analyzing the radio communication}
 
-Radio communication is one of the most important function of the bolus. It
+Radio communication is one of the most important functions of the bolus. It
 heavily impacts the quality of the measurements, because the malfunction of the
 radio ruins the whole measurement. To characterize the data link the RSSI of
 the received packets was plot during a one hour period. The histogram is shown
@@ -340,8 +340,8 @@ filtering at 2.5 Hz and visualization.
 
 \subsection{Rumination}
 
-Rumination is a very important activity of cattles of which monitoring is
-essential. Rumination is a periodic movements of the rumen with large amplitude
+Rumination is a very important activity of cattle of which monitoring is
+essential. Rumination is a periodic movement of the rumen with large amplitude
 (near 0.01-0.02G) and larger period length. The typical period is between 40
 and 80 second. For detecting rumination, according to the literature a
 preprocessing calculation was executed, namely the jerk of each axis and the
@@ -362,7 +362,7 @@ rumination in the first 5 minutes and after that a nonperiodic activity.
 
 Weak signals caused by the heartbeats and the respiration can only analyzed in
 calm periods. Based on the video recording and the standard deviation of the
-acceleration data a calm periods were selected with length of 36 sec. Data were
+acceleration data a calm period was selected with length of 36 sec. Data were
 preprocessed for analysis, namely the outliers were replaced with mean value
 and a moving average was calculated with 8 data width window. The resulted time
 series is in Fig.\ref{heart-time-domain}  shows the selected signal in time
@@ -388,7 +388,7 @@ phenomenon is different in accelerometer measurements to the traditional ECG
 measurements. This later measurement based on detecting electric signals of the
 heart but this former measurement based on detecting the acceleration data
 generated by heart muscles movements.   According to this the respiration is
-visible only in 50-60 percentage of the randomly choosen data samples.
+visible only in 50-60 percentage of the randomly chosen data samples.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.48\textwidth]{fig/Wavelet.png}}
@@ -424,7 +424,7 @@ insulator and keeps the heat of the electric components inside.
 \section{Summary}
 
 In this paper an experimental bolus sensor was presented, which can be injected
-into the rumen of dairy cattle. These type of complex sensors are targeted
+into the rumen of dairy cattle. These types of complex sensors are targeted
 to work for several years and provide processed data to indicate, or even
 predict any important life event of the animal (e.g. illness or oestrus).
 
@@ -432,12 +432,12 @@ This preliminary device is aimed to serve enough raw, unprocessed measurement
 data to support data analysis and therefore help to develop the aforementioned
 bolus.
 
-The test data set was collected using a bolus sensor equipped with an triaxial
+The test data set was collected using a bolus sensor equipped with a triaxial
 accelerometer, a shock sensor and a thermometer. The most comprehensive analysis
 was done on the accelerometer data. After filtering and other transformations,
 the typical patterns of walking and calving
 can be isolated from the data series. With frequency domain analysis traces of
-heartbeats and raspiration can also be recognized.
+heartbeats and respiration can also be recognized.
 
 As an important support of the
 sensors, the performance of the radio communication link was analyzed. The bandwidth,
@@ -450,7 +450,7 @@ algorithms to be used in the next bolus sensor.
 
 ''This research was funded by NKFI Hungary, grant number
 2020-1.1.2-PIACI-KFI-2020-00109''. We would like to thank to Levente Kovács
-MATE Hungary for his advices.
+MATE Hungary for his advice.
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,references}
